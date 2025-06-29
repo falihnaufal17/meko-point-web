@@ -113,8 +113,8 @@ export function Navigation({ scrollToSection }: NavigationProps) {
               <button onClick={() => handleScrollToSection('contact')} className="bg-purple-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-700 w-full text-left">{t('nav.contact')}</button>
               
               {/* Language switcher in mobile menu */}
-              <div className="px-3 py-2">
-                <div className="text-sm font-medium text-gray-500 mb-2">Language / Bahasa</div>
+              <div className="px-3 py-2 border-t border-gray-200 mt-2">
+                <div className="text-sm font-medium text-gray-500 mb-3">Language / Bahasa</div>
                 <LanguageSwitcher />
               </div>
             </nav>

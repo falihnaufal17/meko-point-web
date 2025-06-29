@@ -38,36 +38,41 @@ export function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button 
           variant="outline" 
-          className="flex items-center space-x-2 min-w-[120px]"
+          size="sm"
+          className="flex items-center gap-2 h-9 px-3 border-gray-300 hover:border-purple-300 hover:bg-purple-50 transition-colors"
           aria-label="Select language"
         >
-          <span className="text-lg" role="img" aria-label={currentLanguage.name}>
+          <span className="text-base leading-none" role="img" aria-label={currentLanguage.name}>
             {currentLanguage.flag}
           </span>
-          <span className="text-sm font-medium flex-1 text-left">
+          <span className="text-sm font-medium">
             {currentLanguage.code.toUpperCase()}
           </span>
-          <ChevronDown className="h-4 w-4" />
+          <ChevronDown className="h-3 w-3 opacity-50" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-[200px]">
+      <DropdownMenuContent 
+        align="end" 
+        className="w-48 p-1 bg-white border border-gray-200 shadow-lg rounded-lg"
+        sideOffset={5}
+      >
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
-            className={`flex items-center space-x-3 cursor-pointer ${
-              language === lang.code ? 'bg-accent text-accent-foreground' : ''
+            className={`flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer transition-colors hover:bg-purple-50 focus:bg-purple-50 ${
+              language === lang.code ? 'bg-purple-100 text-purple-900' : 'text-gray-700'
             }`}
           >
-            <span className="text-lg" role="img" aria-label={lang.name}>
+            <span className="text-base leading-none" role="img" aria-label={lang.name}>
               {lang.flag}
             </span>
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <div className="text-sm font-medium">{lang.code.toUpperCase()}</div>
-              <div className="text-xs text-muted-foreground">{lang.name}</div>
+              <div className="text-xs text-gray-500 truncate">{lang.name}</div>
             </div>
             {language === lang.code && (
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <div className="w-2 h-2 bg-purple-600 rounded-full flex-shrink-0"></div>
             )}
           </DropdownMenuItem>
         ))}
