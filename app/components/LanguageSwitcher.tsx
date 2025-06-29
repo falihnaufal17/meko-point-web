@@ -7,19 +7,21 @@ import { Languages } from 'lucide-react';
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'id' ? 'en' : 'id');
+  };
+
   return (
-    <div className="relative inline-block">
-      <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20">
-        <Languages className="h-4 w-4 text-white" />
-        <select
-          value={language}
-          onChange={(e) => setLanguage(e.target.value as 'id' | 'en')}
-          className="bg-transparent text-white text-sm font-medium border-none outline-none cursor-pointer"
-        >
-          <option value="id" className="text-gray-900">ID</option>
-          <option value="en" className="text-gray-900">EN</option>
-        </select>
-      </div>
-    </div>
+    <button
+      onClick={toggleLanguage}
+      className="flex items-center space-x-2 bg-gray-100 hover:bg-gray-200 rounded-lg px-3 py-2 transition-colors duration-200 border border-gray-300"
+      aria-label={`Switch to ${language === 'id' ? 'English' : 'Indonesian'}`}
+      title={`Switch to ${language === 'id' ? 'English' : 'Indonesian'}`}
+    >
+      <Languages className="h-4 w-4 text-gray-600" />
+      <span className="text-sm font-medium text-gray-700 uppercase">
+        {language}
+      </span>
+    </button>
   );
 }
