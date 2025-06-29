@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { LanguageProvider } from '../contexts/LanguageContext';
-import { Navigation } from './Navigation';
+import { ClientNavigationWrapper } from './ClientNavigationWrapper';
 import { HeroSection } from './HeroSection';
 import { HowItWorksSection } from './HowItWorksSection';
 import { FeaturesSection } from './FeaturesSection';
@@ -27,7 +27,7 @@ export function ClientWrapper() {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-white scroll-smooth">
-        <Navigation scrollToSection={scrollToSection} />
+        <ClientNavigationWrapper scrollToSection={scrollToSection} />
         
         <main>
           <HeroSection />
