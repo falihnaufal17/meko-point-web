@@ -1,3 +1,8 @@
 {
-  "template": "bolt-vite-react-ts"
+  "name": "meko-point",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": "out",
+  "installCommand": "npm install",
+  "startCommand": "npm run dev"
 }
