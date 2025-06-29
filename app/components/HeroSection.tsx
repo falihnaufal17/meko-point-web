@@ -10,7 +10,7 @@ export function HeroSection() {
           <AnimatedSection direction="left" delay={200}>
             <header>
               <div className="mb-6">
-                <div className="inline-flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2 text-purple-600 text-sm font-medium">
+                <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-purple-100 text-sm font-medium">
                   <Package className="h-4 w-4 mr-2" aria-hidden="true" />
                   POS dan Inventory System
                 </div>
@@ -36,7 +36,7 @@ export function HeroSection() {
           </AnimatedSection>
           
           <AnimatedSection direction="right" delay={400}>
-            <figure className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
+            <figure className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
               <div className="text-center mb-6">
                 <QrCode className="h-24 w-24 text-white mx-auto mb-4" aria-hidden="true" />
                 <h3 className="text-2xl font-bold text-white mb-2">Scan QR Code</h3>
