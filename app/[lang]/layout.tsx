@@ -6,7 +6,7 @@ import { translations, Language } from '../lib/translations'
 const inter = Inter({ subsets: ['latin'] })
 
 interface Props {
-  params: { lang: string }
+  params: Promise<{ lang: string }>
 }
 
 export async function generateStaticParams() {
@@ -17,10 +17,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const lang = params.lang as Language
+  const { lang } = await params
   const t = (key: string) => {
     const keys = key.split('.')
-    let value: any = translations[lang] || translations.id
+    let value: any = translations[lang as Language] || translations.id
     
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
@@ -50,15 +50,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params
 }: {
   children: React.ReactNode
-  params: { lang: string }
+  params: Promise<{ lang: string }>
 }) {
+  const { lang } = await params
+  
   return (
-    <html lang={params.lang} className="scroll-smooth">
+    <html lang={lang} className="scroll-smooth">
       <body className={inter.className}>{children}</body>
     </html>
   )
