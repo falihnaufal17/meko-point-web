@@ -89,8 +89,7 @@ export function Navigation({ scrollToSection }: NavigationProps) {
             <LanguageSwitcher />
           </div>
           
-          <div className="md:hidden flex items-center space-x-3">
-            <LanguageSwitcher />
+          <div className="md:hidden">
             <button 
               onClick={toggleMenu} 
               className="text-gray-700 hover:text-purple-600"
@@ -112,6 +111,12 @@ export function Navigation({ scrollToSection }: NavigationProps) {
               <button onClick={() => handleScrollToSection('mission')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">{t('nav.mission')}</button>
               <button onClick={() => handleScrollToSection('pricing')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">{t('nav.pricing')}</button>
               <button onClick={() => handleScrollToSection('contact')} className="bg-purple-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-700 w-full text-left">{t('nav.contact')}</button>
+              
+              {/* Language switcher in mobile menu */}
+              <div className="px-3 py-2">
+                <div className="text-sm font-medium text-gray-500 mb-2">Language / Bahasa</div>
+                <LanguageSwitcher />
+              </div>
             </nav>
           </div>
         )}
