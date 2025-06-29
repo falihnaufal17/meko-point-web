@@ -2,10 +2,10 @@ import { ClientWrapper } from '../components/ClientWrapper'
 import { Language } from '../lib/translations'
 
 interface Props {
-  params: { lang: string }
+  params: Promise<{ lang: string }>
 }
 
-export default function Home({ params }: Props) {
-  const lang = params.lang as Language
-  return <ClientWrapper initialLanguage={lang} />
+export default async function Home({ params }: Props) {
+  const { lang } = await params
+  return <ClientWrapper initialLanguage={lang as Language} />
 }
