@@ -31,10 +31,10 @@ export function ClientWrapper({ initialLanguage }: ClientWrapperProps) {
 
   return (
     <LanguageProvider initialLanguage={initialLanguage}>
-      <div className="min-h-screen bg-white scroll-smooth">
+      <div className="min-h-screen bg-white scroll-smooth overflow-x-hidden w-full">
         <ClientNavigationWrapper scrollToSection={scrollToSection} />
         
-        <main>
+        <main className="w-full overflow-x-hidden">
           <HeroSection />
           <HowItWorksSection />
           <FeaturesSection />

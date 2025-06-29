@@ -19,7 +19,7 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   const [ref, isVisible] = useScrollAnimation();
 
   const getAnimationClasses = () => {
-    const baseClasses = 'transition-all duration-1000 ease-out';
+    const baseClasses = 'transition-all duration-1000 ease-out w-full';
     
     if (!isVisible) {
       switch (direction) {
