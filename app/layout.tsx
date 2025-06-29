@@ -40,6 +40,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : 'Revolutionary QR-based POS and inventory system for Indonesian restaurants. Skip the queue, scan QR codes at tables, and order directly. Complete point-of-sale solution with integrated inventory management.',
     keywords: 'POS system, inventory management, QR ordering, restaurant technology, Indonesia, SME, digital transformation',
     authors: [{ name: 'Meko Point' }],
+    robots: {
+      index: false,
+      follow: false,
+      nocache: true,
+      googleBot: {
+        index: false,
+        follow: false,
+        noimageindex: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
       title: 'Meko Point - QR-Based POS dan Inventory System',
       description: lang === 'id'
