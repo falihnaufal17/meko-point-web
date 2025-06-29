@@ -1,24 +1,27 @@
 import { Star, Users } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function TestimonialsSection() {
+  const { t } = useLanguage();
+
   const testimonials = [
     {
-      text: "Meko Point eliminated our cashier queues completely! The integrated inventory management is a game-changer. We serve 50% more customers daily.",
-      name: "Budi Santoso",
-      role: "Owner, Warung Nusantara",
+      text: t('testimonials.testimonial1'),
+      name: t('testimonials.customer1.name'),
+      role: t('testimonials.customer1.role'),
       delay: 200
     },
     {
-      text: "The affordable pricing and comprehensive POS features helped us modernize without breaking the bank. Revenue increased by 40% with better inventory control!",
-      name: "Sari Dewi",
-      role: "Manager, Cafe Indah",
+      text: t('testimonials.testimonial2'),
+      name: t('testimonials.customer2.name'),
+      role: t('testimonials.customer2.role'),
       delay: 400
     },
     {
-      text: "Customers scan QR codes and order instantly. The POS system tracks everything automatically. No more long queues, happier customers, perfect inventory management!",
-      name: "Ahmad Rahman",
-      role: "Owner, Resto Berkah",
+      text: t('testimonials.testimonial3'),
+      name: t('testimonials.customer3.name'),
+      role: t('testimonials.customer3.role'),
       delay: 600
     }
   ];
@@ -29,9 +32,9 @@ export function TestimonialsSection() {
         <AnimatedSection direction="fade" className="text-center mb-16">
           <header>
             <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Trusted by Indonesian Restaurants
+              {t('testimonials.title')}
             </h2>
-            <p className="text-xl text-gray-600">See how Meko Point transformed their business operations</p>
+            <p className="text-xl text-gray-600">{t('testimonials.description')}</p>
           </header>
         </AnimatedSection>
         
@@ -63,4 +66,4 @@ export function TestimonialsSection() {
       </div>
     </section>
   );
-} 
+}

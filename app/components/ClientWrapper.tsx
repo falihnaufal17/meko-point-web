@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react';
+import { LanguageProvider } from '../contexts/LanguageContext';
 import { Navigation } from './Navigation';
 import { HeroSection } from './HeroSection';
 import { HowItWorksSection } from './HowItWorksSection';
@@ -24,21 +25,23 @@ export function ClientWrapper() {
   };
 
   return (
-    <div className="min-h-screen bg-white scroll-smooth">
-      <Navigation scrollToSection={scrollToSection} />
-      
-      <main>
-        <HeroSection />
-        <HowItWorksSection />
-        <FeaturesSection />
-        <MissionSection />
-        <BenefitsSection />
-        <TestimonialsSection />
-        <PricingSection />
-        <CTASection />
-      </main>
+    <LanguageProvider>
+      <div className="min-h-screen bg-white scroll-smooth">
+        <Navigation scrollToSection={scrollToSection} />
+        
+        <main>
+          <HeroSection />
+          <HowItWorksSection />
+          <FeaturesSection />
+          <MissionSection />
+          <BenefitsSection />
+          <TestimonialsSection />
+          <PricingSection />
+          <CTASection />
+        </main>
 
-      <Footer scrollToSection={scrollToSection} />
-    </div>
+        <Footer scrollToSection={scrollToSection} />
+      </div>
+    </LanguageProvider>
   );
-} 
+}

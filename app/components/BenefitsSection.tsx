@@ -1,16 +1,19 @@
 import { Clock, Package, BarChart3, QrCode, Utensils, Coffee } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function BenefitsSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 bg-white" aria-labelledby="benefits-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection direction="fade" className="text-center mb-16">
           <header>
             <h2 id="benefits-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Meko Point?
+              {t('benefits.title')}
             </h2>
-            <p className="text-xl text-gray-600">Transform your restaurant operations with integrated QR ordering, POS, and inventory management</p>
+            <p className="text-xl text-gray-600">{t('benefits.description')}</p>
           </header>
         </AnimatedSection>
         
@@ -22,8 +25,8 @@ export function BenefitsSection() {
                   <Clock className="h-8 w-8 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">70% Faster Service</h3>
-                  <p className="text-gray-600">Eliminate cashier queues and reduce order processing time significantly</p>
+                  <h3 className="text-xl font-semibold text-gray-900">{t('benefits.fasterService.title')}</h3>
+                  <p className="text-gray-600">{t('benefits.fasterService.description')}</p>
                 </div>
               </div>
               
@@ -32,8 +35,8 @@ export function BenefitsSection() {
                   <Package className="h-8 w-8 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">Automated Inventory</h3>
-                  <p className="text-gray-600">Real-time stock tracking with automatic updates when orders are placed</p>
+                  <h3 className="text-xl font-semibold text-gray-900">{t('benefits.automatedInventory.title')}</h3>
+                  <p className="text-gray-600">{t('benefits.automatedInventory.description')}</p>
                 </div>
               </div>
               
@@ -42,8 +45,8 @@ export function BenefitsSection() {
                   <BarChart3 className="h-8 w-8 text-purple-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">Increased Revenue</h3>
-                  <p className="text-gray-600">Serve more customers with same staff, reduce operational costs, better inventory control</p>
+                  <h3 className="text-xl font-semibold text-gray-900">{t('benefits.increasedRevenue.title')}</h3>
+                  <p className="text-gray-600">{t('benefits.increasedRevenue.description')}</p>
                 </div>
               </div>
             </div>
@@ -54,17 +57,17 @@ export function BenefitsSection() {
               <div className="text-center">
                 <div className="bg-white rounded-xl p-6 shadow-lg mb-6">
                   <QrCode className="h-16 w-16 text-purple-600 mx-auto mb-4" aria-hidden="true" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Table #5</h3>
-                  <p className="text-gray-600">Scan to order</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('benefits.tableNumber')}</h3>
+                  <p className="text-gray-600">{t('benefits.scanToOrder')}</p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white p-4 rounded-lg shadow">
                     <Utensils className="h-8 w-8 text-purple-600 mx-auto mb-2" aria-hidden="true" />
-                    <p className="text-sm font-semibold">Food Menu</p>
+                    <p className="text-sm font-semibold">{t('benefits.foodMenu')}</p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <Coffee className="h-8 w-8 text-purple-600 mx-auto mb-2" aria-hidden="true" />
-                    <p className="text-sm font-semibold">Beverages</p>
+                    <p className="text-sm font-semibold">{t('benefits.beverages')}</p>
                   </div>
                 </div>
               </div>
@@ -74,4 +77,4 @@ export function BenefitsSection() {
       </div>
     </section>
   );
-} 
+}

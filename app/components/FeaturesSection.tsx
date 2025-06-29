@@ -1,14 +1,47 @@
 import { QrCode, Package, Cloud, Clock, Smartphone, BarChart3 } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function FeaturesSection() {
+  const { t } = useLanguage();
+
   const features = [
-    { icon: QrCode, title: "QR Code Ordering", desc: "Customers scan table QR codes to access digital menus and place orders directly from their phones.", delay: 100 },
-    { icon: Package, title: "Inventory Management", desc: "Real-time inventory tracking with automatic stock updates when orders are placed and fulfilled.", delay: 200 },
-    { icon: Cloud, title: "Cloud-Based POS", desc: "Access your POS system anywhere, anytime. No installation required, automatic updates, and secure cloud storage.", delay: 300 },
-    { icon: Clock, title: "Zero Queue Time", desc: "Eliminate cashier queues completely. Orders go directly to kitchen, reducing wait times by up to 70%.", delay: 400 },
-    { icon: Smartphone, title: "Mobile Optimized", desc: "Perfect mobile experience for customers. No app download needed - works directly in web browser.", delay: 500 },
-    { icon: BarChart3, title: "Real-Time Analytics", desc: "Track orders, inventory levels, popular items, peak hours, and revenue in real-time with comprehensive dashboard.", delay: 600 }
+    { 
+      icon: QrCode, 
+      title: t('features.qrOrdering.title'), 
+      desc: t('features.qrOrdering.description'), 
+      delay: 100 
+    },
+    { 
+      icon: Package, 
+      title: t('features.inventory.title'), 
+      desc: t('features.inventory.description'), 
+      delay: 200 
+    },
+    { 
+      icon: Cloud, 
+      title: t('features.cloudPos.title'), 
+      desc: t('features.cloudPos.description'), 
+      delay: 300 
+    },
+    { 
+      icon: Clock, 
+      title: t('features.zeroQueue.title'), 
+      desc: t('features.zeroQueue.description'), 
+      delay: 400 
+    },
+    { 
+      icon: Smartphone, 
+      title: t('features.mobileOptimized.title'), 
+      desc: t('features.mobileOptimized.description'), 
+      delay: 500 
+    },
+    { 
+      icon: BarChart3, 
+      title: t('features.analytics.title'), 
+      desc: t('features.analytics.description'), 
+      delay: 600 
+    }
   ];
 
   return (
@@ -17,10 +50,10 @@ export function FeaturesSection() {
         <AnimatedSection direction="fade" className="text-center mb-16">
           <header>
             <h2 id="features-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Complete POS dan Inventory Solution
+              {t('features.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Meko Point combines QR ordering with comprehensive point-of-sale and inventory management
+              {t('features.description')}
             </p>
           </header>
         </AnimatedSection>
@@ -41,4 +74,4 @@ export function FeaturesSection() {
       </div>
     </section>
   );
-} 
+}

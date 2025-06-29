@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Menu, X, Package } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface NavigationProps {
   scrollToSection: (sectionId: string) => void;
@@ -9,6 +11,7 @@ interface NavigationProps {
 
 export function Navigation({ scrollToSection }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { t } = useLanguage();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -30,20 +33,20 @@ export function Navigation({ scrollToSection }: NavigationProps) {
                 <h1 className="text-2xl font-bold text-gray-900">
                   Meko<span className="text-purple-600">Point</span>
                 </h1>
-                <p className="text-xs text-gray-500 -mt-1">POS dan Inventory</p>
+                <p className="text-xs text-gray-500 -mt-1">{t('hero.tagline')}</p>
               </div>
             </div>
           </div>
           
-          <div className="hidden md:block">
-            <ul className="ml-10 flex items-baseline space-x-4" role="menubar">
+          <div className="hidden md:flex items-center space-x-6">
+            <ul className="flex items-baseline space-x-4" role="menubar">
               <li role="none">
                 <button 
                   onClick={() => handleScrollToSection('features')} 
                   className="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   role="menuitem"
                 >
-                  Features
+                  {t('nav.features')}
                 </button>
               </li>
               <li role="none">
@@ -52,7 +55,7 @@ export function Navigation({ scrollToSection }: NavigationProps) {
                   className="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   role="menuitem"
                 >
-                  How It Works
+                  {t('nav.howItWorks')}
                 </button>
               </li>
               <li role="none">
@@ -61,7 +64,7 @@ export function Navigation({ scrollToSection }: NavigationProps) {
                   className="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   role="menuitem"
                 >
-                  Mission
+                  {t('nav.mission')}
                 </button>
               </li>
               <li role="none">
@@ -70,7 +73,7 @@ export function Navigation({ scrollToSection }: NavigationProps) {
                   className="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   role="menuitem"
                 >
-                  Pricing
+                  {t('nav.pricing')}
                 </button>
               </li>
               <li role="none">
@@ -79,13 +82,15 @@ export function Navigation({ scrollToSection }: NavigationProps) {
                   className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700 transition-colors"
                   role="menuitem"
                 >
-                  Contact
+                  {t('nav.contact')}
                 </button>
               </li>
             </ul>
+            <LanguageSwitcher />
           </div>
           
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-3">
+            <LanguageSwitcher />
             <button 
               onClick={toggleMenu} 
               className="text-gray-700 hover:text-purple-600"
@@ -102,15 +107,15 @@ export function Navigation({ scrollToSection }: NavigationProps) {
         {isMenuOpen && (
           <div className="md:hidden" id="mobile-menu">
             <nav className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t" role="navigation" aria-label="Mobile navigation">
-              <button onClick={() => handleScrollToSection('features')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">Features</button>
-              <button onClick={() => handleScrollToSection('how-it-works')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">How It Works</button>
-              <button onClick={() => handleScrollToSection('mission')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">Mission</button>
-              <button onClick={() => handleScrollToSection('pricing')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">Pricing</button>
-              <button onClick={() => handleScrollToSection('contact')} className="bg-purple-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-700 w-full text-left">Contact</button>
+              <button onClick={() => handleScrollToSection('features')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">{t('nav.features')}</button>
+              <button onClick={() => handleScrollToSection('how-it-works')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">{t('nav.howItWorks')}</button>
+              <button onClick={() => handleScrollToSection('mission')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">{t('nav.mission')}</button>
+              <button onClick={() => handleScrollToSection('pricing')} className="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left">{t('nav.pricing')}</button>
+              <button onClick={() => handleScrollToSection('contact')} className="bg-purple-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-700 w-full text-left">{t('nav.contact')}</button>
             </nav>
           </div>
         )}
       </nav>
     </header>
   );
-} 
+}

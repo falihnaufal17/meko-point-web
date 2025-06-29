@@ -1,17 +1,20 @@
 import { QrCode, Utensils, Zap } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function HowItWorksSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="how-it-works" className="py-20 bg-gray-50" aria-labelledby="how-it-works-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection direction="fade" className="text-center mb-16">
           <header>
             <h2 id="how-it-works-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How Meko Point QR Ordering Works
+              {t('howItWorks.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Simple 3-step process that eliminates queues and enhances customer experience with integrated POS and inventory management
+              {t('howItWorks.description')}
             </p>
           </header>
         </AnimatedSection>
@@ -23,10 +26,9 @@ export function HowItWorksSection() {
                 <QrCode className="h-10 w-10 text-white" />
               </div>
               <article className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">1. Scan QR Code</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('howItWorks.step1.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Customer sits at table and scans the unique QR code with their smartphone. 
-                  Instantly opens the digital menu without any app download required.
+                  {t('howItWorks.step1.description')}
                 </p>
               </article>
             </li>
@@ -38,10 +40,9 @@ export function HowItWorksSection() {
                 <Utensils className="h-10 w-10 text-white" />
               </div>
               <article className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">2. Browse & Order</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('howItWorks.step2.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Browse the complete menu with photos, descriptions, and prices. 
-                  Select food and drinks, customize orders, and add special requests easily.
+                  {t('howItWorks.step2.description')}
                 </p>
               </article>
             </li>
@@ -53,10 +54,9 @@ export function HowItWorksSection() {
                 <Zap className="h-10 w-10 text-white" />
               </div>
               <article className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">3. Skip the Queue</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('howItWorks.step3.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Order goes directly to kitchen via POS system. Inventory automatically updated. 
-                  No waiting in line at cashier. Food delivered straight to the table.
+                  {t('howItWorks.step3.description')}
                 </p>
               </article>
             </li>
@@ -65,4 +65,4 @@ export function HowItWorksSection() {
       </div>
     </section>
   );
-} 
+}
