@@ -1,6 +1,7 @@
 import { Package, ArrowRight, QrCode, Utensils, Coffee, CheckCircle } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -26,13 +27,13 @@ export function HeroSection() {
                 {t('hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg">
+                <Button size="lg" className="bg-white text-purple-600 hover:bg-purple-50 shadow-lg">
                   {t('hero.startTrial')}
                   <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-                </button>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-all duration-300">
+                </Button>
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-purple-600">
                   {t('hero.watchDemo')}
-                </button>
+                </Button>
               </div>
             </header>
           </AnimatedSection>
