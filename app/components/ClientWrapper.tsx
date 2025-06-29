@@ -12,8 +12,13 @@ import { TestimonialsSection } from './TestimonialsSection';
 import { PricingSection } from './PricingSection';
 import { CTASection } from './CTASection';
 import { Footer } from './Footer';
+import { Language } from '../lib/translations';
 
-export function ClientWrapper() {
+interface ClientWrapperProps {
+  initialLanguage: Language;
+}
+
+export function ClientWrapper({ initialLanguage }: ClientWrapperProps) {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -25,7 +30,7 @@ export function ClientWrapper() {
   };
 
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLanguage={initialLanguage}>
       <div className="min-h-screen bg-white scroll-smooth">
         <ClientNavigationWrapper scrollToSection={scrollToSection} />
         

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { translations, Language } from '../lib/translations';
 
 interface LanguageContextType {
@@ -11,21 +12,30 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('id'); // Default to Indonesian
+interface LanguageProviderProps {
+  children: React.ReactNode;
+  initialLanguage: Language;
+}
 
-  // Load saved language preference from localStorage
+export function LanguageProvider({ children, initialLanguage }: LanguageProviderProps) {
+  const [language, setLanguage] = useState<Language>(initialLanguage);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Update language state when initialLanguage changes (route change)
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'id' || savedLanguage === 'en')) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
+    setLanguage(initialLanguage);
+  }, [initialLanguage]);
 
-  // Save language preference to localStorage
+  // Handle language change with route navigation
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
+    
+    // Extract the current path without the language prefix
+    const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, '') || '';
+    
+    // Navigate to the new language route
+    router.push(`/${lang}${pathWithoutLang}`);
   };
 
   // Translation function with nested key support

@@ -1,5 +1,6 @@
-import { ClientWrapper } from './components/ClientWrapper';
+import { redirect } from 'next/navigation'
 
-export default function Home() {
-  return <ClientWrapper />;
+export default function RootPage() {
+  // Redirect to Indonesian as default language
+  redirect('/id')
 }
