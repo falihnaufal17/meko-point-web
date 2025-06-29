@@ -3,7 +3,7 @@ import { AnimatedSection } from './AnimatedSection';
 
 export function MissionSection() {
   return (
-    <section id="mission" className="py-20 bg-gradient-to-br from-gray-50 to-purple-50" aria-labelledby="mission-heading">
+    <section id="mission" className="py-20 bg-linear-to-br from-gray-50 to-purple-50" aria-labelledby="mission-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <AnimatedSection direction="left">
@@ -15,7 +15,7 @@ export function MissionSection() {
                   how Indonesian restaurants serve their customers through innovative QR technology and comprehensive POS solutions.
                 </p>
               </header>
-              <aside className="bg-gradient-to-r from-purple-600 to-indigo-600 p-8 rounded-xl text-white shadow-xl">
+              <aside className="bg-linear-to-r from-purple-600 to-indigo-600 p-8 rounded-xl text-white shadow-xl">
                 <h3 className="text-2xl font-semibold mb-4">Revolutionizing Restaurant Operations</h3>
                 <p className="text-purple-100 leading-relaxed">
                   We envision a future where every Indonesian restaurant offers seamless, 
@@ -32,7 +32,7 @@ export function MissionSection() {
               </header>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg">
-                  <div className="bg-purple-100 rounded-full p-3 flex-shrink-0" aria-hidden="true">
+                  <div className="bg-purple-100 rounded-full p-3 shrink-0" aria-hidden="true">
                     <CheckCircle className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
@@ -44,7 +44,7 @@ export function MissionSection() {
                 </div>
                 
                 <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg">
-                  <div className="bg-purple-100 rounded-full p-3 flex-shrink-0" aria-hidden="true">
+                  <div className="bg-purple-100 rounded-full p-3 shrink-0" aria-hidden="true">
                     <CheckCircle className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>

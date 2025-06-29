@@ -3,14 +3,14 @@ import { AnimatedSection } from './AnimatedSection';
 
 export function HeroSection() {
   return (
-    <section className="pt-20 pb-16 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 overflow-hidden relative" aria-labelledby="hero-heading">
+    <section className="pt-20 pb-16 bg-linear-to-br from-purple-600 via-purple-700 to-indigo-800 overflow-hidden relative" aria-labelledby="hero-heading">
       <div className="absolute inset-0 bg-black opacity-10" aria-hidden="true"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <AnimatedSection direction="left" delay={200}>
             <header>
               <div className="mb-6">
-                <div className="inline-flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2 text-purple-100 text-sm font-medium">
+                <div className="inline-flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2 text-purple-600 text-sm font-medium">
                   <Package className="h-4 w-4 mr-2" aria-hidden="true" />
                   POS dan Inventory System
                 </div>

@@ -18,11 +18,11 @@ export function Navigation({ scrollToSection }: NavigationProps) {
   };
 
   return (
-    <header className="bg-white shadow-lg fixed w-full z-50 backdrop-blur-sm bg-white/95">
+    <header className="shadow-lg fixed w-full z-50 backdrop-blur-sm bg-white/95">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Main navigation">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
+            <div className="shrink-0 flex items-center">
               <div className="bg-purple-600 p-2 rounded-lg" role="img" aria-label="Meko Point logo">
                 <Package className="h-6 w-6 text-white" />
               </div>

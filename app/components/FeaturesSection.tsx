@@ -28,7 +28,7 @@ export function FeaturesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <AnimatedSection key={index} direction="up" delay={feature.delay}>
-              <article className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <article className="bg-linear-to-br from-purple-50 to-purple-100 p-8 rounded-xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className="bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6" aria-hidden="true">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>

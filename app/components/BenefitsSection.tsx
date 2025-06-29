@@ -50,7 +50,7 @@ export function BenefitsSection() {
           </AnimatedSection>
           
           <AnimatedSection direction="right">
-            <figure className="bg-gradient-to-br from-purple-100 to-indigo-100 p-8 rounded-2xl">
+            <figure className="bg-linear-to-br from-purple-100 to-indigo-100 p-8 rounded-2xl">
               <div className="text-center">
                 <div className="bg-white rounded-xl p-6 shadow-lg mb-6">
                   <QrCode className="h-16 w-16 text-purple-600 mx-auto mb-4" aria-hidden="true" />

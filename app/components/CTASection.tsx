@@ -2,7 +2,7 @@ import { AnimatedSection } from './AnimatedSection';
 
 export function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600" aria-labelledby="cta-heading">
+    <section className="py-20 bg-linear-to-r from-purple-600 to-indigo-600" aria-labelledby="cta-heading">
       <AnimatedSection direction="fade" className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <header>
           <h2 id="cta-heading" className="text-3xl md:text-4xl font-bold text-white mb-6">

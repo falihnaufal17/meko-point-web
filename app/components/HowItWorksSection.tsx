@@ -19,7 +19,7 @@ export function HowItWorksSection() {
         <ol className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <AnimatedSection direction="up" delay={200}>
             <li className="text-center group">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" aria-hidden="true">
+              <div className="bg-linear-to-br from-purple-500 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" aria-hidden="true">
                 <QrCode className="h-10 w-10 text-white" />
               </div>
               <article className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -34,7 +34,7 @@ export function HowItWorksSection() {
           
           <AnimatedSection direction="up" delay={400}>
             <li className="text-center group">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" aria-hidden="true">
+              <div className="bg-linear-to-br from-purple-500 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" aria-hidden="true">
                 <Utensils className="h-10 w-10 text-white" />
               </div>
               <article className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -49,7 +49,7 @@ export function HowItWorksSection() {
           
           <AnimatedSection direction="up" delay={600}>
             <li className="text-center group">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" aria-hidden="true">
+              <div className="bg-linear-to-br from-purple-500 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" aria-hidden="true">
                 <Zap className="h-10 w-10 text-white" />
               </div>
               <article className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">

@@ -38,7 +38,7 @@ export function PricingSection() {
           </AnimatedSection>
           
           <AnimatedSection direction="up" delay={400}>
-            <article className="bg-gradient-to-br from-purple-600 to-indigo-600 p-8 rounded-xl text-white relative transform scale-105 shadow-xl">
+            <article className="bg-linear-to-br from-purple-600 to-indigo-600 p-8 rounded-xl text-white relative transform scale-105 shadow-xl">
               <div className="absolute top-4 right-4 bg-yellow-400 text-purple-900 px-3 py-1 rounded-full text-sm font-semibold">
                 Most Popular
               </div>
