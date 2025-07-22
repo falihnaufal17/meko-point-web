@@ -134,18 +134,19 @@ export const translations = {
     
     // Pricing
     pricing: {
-      title: 'Harga Terjangkau untuk Setiap Bisnis',
-      description: 'Pilih paket Meko Point yang sesuai dengan kebutuhan restoran Anda',
+      title: 'Paket Harga yang Fleksibel',
+      description: 'Pilih paket yang tepat untuk mengembangkan bisnis restoran Anda dengan teknologi QR ordering terdepan',
       starter: {
         title: 'Starter',
         price: 'Rp 299K',
         period: '/bulan',
         features: [
-          'Hingga 10 meja',
-          'QR code ordering',
-          'Fitur POS dasar',
-          'Pelacakan inventory sederhana',
-          'Dukungan email'
+          'Maksimal 10 meja',
+          'QR code ordering sistem',
+          'Dashboard POS dasar',
+          'Manajemen stok sederhana',
+          'Support via email',
+          'Setup gratis'
         ]
       },
       professional: {
@@ -154,12 +155,13 @@ export const translations = {
         period: '/bulan',
         mostPopular: 'Paling Populer',
         features: [
-          'Hingga 30 meja',
-          'QR ordering lanjutan',
-          'Sistem POS lengkap',
-          'Manajemen inventory lanjutan',
-          'Analitik & laporan',
-          'Dukungan prioritas'
+          'Maksimal 30 meja',
+          'QR ordering dengan kustomisasi',
+          'Dashboard POS lengkap',
+          'Manajemen inventory otomatis',
+          'Laporan analitik real-time',
+          'Support prioritas 24/7',
+          'Training tim gratis'
         ]
       },
       enterprise: {
@@ -167,12 +169,13 @@ export const translations = {
         price: 'Kustom',
         features: [
           'Meja tidak terbatas',
-          'Dukungan multi-lokasi',
-          'Desain QR kustom',
-          'Fitur POS enterprise',
-          'Analitik inventory lanjutan',
+          'Multi-lokasi & cabang',
+          'Custom branding & QR design',
+          'Advanced POS features',
+          'Business intelligence dashboard',
           'Integrasi API',
-          'Dukungan khusus'
+          'Dedicated account manager',
+          'SLA 99.9% uptime'
         ]
       },
       startTrial: 'Mulai Uji Coba Gratis',
@@ -344,18 +347,19 @@ export const translations = {
     
     // Pricing
     pricing: {
-      title: 'Affordable Pricing for Every Business',
-      description: 'Choose the Meko Point plan that fits your restaurant\'s needs',
+      title: 'Flexible Pricing Plans',
+      description: 'Choose the right plan to grow your restaurant business with leading QR ordering technology',
       starter: {
         title: 'Starter',
         price: 'Rp 299K',
         period: '/month',
         features: [
           'Up to 10 tables',
-          'QR code ordering',
-          'Basic POS features',
-          'Simple inventory tracking',
-          'Email support'
+          'QR code ordering system',
+          'Basic POS dashboard',
+          'Simple stock management',
+          'Email support',
+          'Free setup'
         ]
       },
       professional: {
@@ -365,11 +369,12 @@ export const translations = {
         mostPopular: 'Most Popular',
         features: [
           'Up to 30 tables',
-          'Advanced QR ordering',
-          'Complete POS system',
-          'Advanced inventory management',
-          'Analytics & reports',
-          'Priority support'
+          'Customizable QR ordering',
+          'Complete POS dashboard',
+          'Automated inventory management',
+          'Real-time analytics reports',
+          '24/7 priority support',
+          'Free team training'
         ]
       },
       enterprise: {
@@ -377,12 +382,13 @@ export const translations = {
         price: 'Custom',
         features: [
           'Unlimited tables',
-          'Multi-location support',
-          'Custom QR designs',
-          'Enterprise POS features',
-          'Advanced inventory analytics',
+          'Multi-location & branches',
+          'Custom branding & QR design',
+          'Advanced POS features',
+          'Business intelligence dashboard',
           'API integrations',
-          'Dedicated support'
+          'Dedicated account manager',
+          '99.9% uptime SLA'
         ]
       },
       startTrial: 'Start Free Trial',
