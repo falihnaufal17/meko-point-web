@@ -17,6 +17,11 @@ deploy_to_biznet_gio:
     - |
       ssh $BIZ_USER@$BIZ_HOST <<EOF
       set -e
+      echo "🔧 Init Node"
+      export NVM_DIR="\$HOME/.nvm"
+      [ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
+      [ -s "\$NVM_DIR/bash_completion" ] && \. "\$NVM_DIR/bash_completion"
+      nvm use node 22
       echo "✅ Masuk ke server"
       echo "Change directory ke $BIZ_PATH"
       cd $BIZ_PATH
