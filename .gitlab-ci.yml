@@ -13,7 +13,7 @@ deploy_to_biznet_gio:
     - chmod 700 ~/.ssh
     - ssh-keyscan $BIZ_HOST >> ~/.ssh/known_hosts
   script:
-    - ssh $BIZ_USER@$BIZ_HOST <<EOF
+    - ssh $BIZ_USER@$BIZ_HOST <<'EOF'
         set -e
         cd $BIZ_PATH
         git pull origin main
