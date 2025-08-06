@@ -16,25 +16,25 @@ deploy_to_biznet_gio:
     - echo "🚀 Mulai SSH deploy ke Biznet Gio..."
     - |
       ssh $BIZ_USER@$BIZ_HOST <<EOF
-      set -e
-      echo "🔧 Init Node"
-      export NVM_DIR="\$HOME/.nvm"
-      [ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
-      [ -s "\$NVM_DIR/bash_completion" ] && \. "\$NVM_DIR/bash_completion"
-      nvm use node 22
-      echo "✅ Masuk ke server"
-      echo "Change directory ke $BIZ_PATH"
-      cd $BIZ_PATH
-      ls -l
-      echo "📥 Git pull..."
-      sudo git pull origin main
-      echo "📦 Install dependency..."
-      npm install
-      echo "🛠️  Build aplikasi..."
-      npm run build
-      echo "♻️ Restart pakai PM2..."
-      pm2 delete meko-point-web || true
-      pm2 start ecosystem.config.js
-      pm2 save
-      echo "✅ Deploy selesai!"
-EOF
+        set -e
+        echo "🔧 Init Node"
+        export NVM_DIR="\$HOME/.nvm"
+        [ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
+        [ -s "\$NVM_DIR/bash_completion" ] && \. "\$NVM_DIR/bash_completion"
+        nvm use node 22
+        echo "✅ Masuk ke server"
+        echo "Change directory ke $BIZ_PATH"
+        cd $BIZ_PATH
+        ls -l
+        echo "📥 Git pull..."
+        sudo git pull origin main
+        echo "📦 Install dependency..."
+        npm install
+        echo "🛠️  Build aplikasi..."
+        npm run build
+        echo "♻️ Restart pakai PM2..."
+        pm2 delete meko-point-web || true
+        pm2 start ecosystem.config.js
+        pm2 save
+        echo "✅ Deploy selesai!"
+      EOF
