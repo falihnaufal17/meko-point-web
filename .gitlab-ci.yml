@@ -23,11 +23,11 @@ deploy_to_biznet_gio:
       git pull origin main
       echo "📦 Install dependency..."
       npm install
-      echo "🛠️ Build aplikasi..."
+      echo "🛠️  Build aplikasi..."
       npm run build
       echo "♻️ Restart pakai PM2..."
       pm2 delete meko-point-web || true
       pm2 start ecosystem.config.js
       pm2 save
       echo "✅ Deploy selesai!"
-EOF
+        EOF
