@@ -19,6 +19,7 @@ deploy_to_biznet_gio:
       set -e
       echo "✅ Masuk ke server"
       cd $BIZ_PATH
+      ls -l
       echo "📥 Git pull..."
       sudo git pull origin main
       echo "📦 Install dependency..."
