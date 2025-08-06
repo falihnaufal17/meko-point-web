@@ -37,4 +37,4 @@ deploy_to_biznet_gio:
       pm2 start ecosystem.config.js
       pm2 save
       echo "✅ Deploy selesai!"
-        EOF
+EOF
