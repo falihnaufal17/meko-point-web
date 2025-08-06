@@ -18,6 +18,7 @@ deploy_to_biznet_gio:
       ssh $BIZ_USER@$BIZ_HOST <<'EOF'
       set -e
       echo "✅ Masuk ke server"
+      echo $BIZ_PATH
       cd $BIZ_PATH
       ls -l
       echo "📥 Git pull..."
