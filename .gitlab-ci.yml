@@ -15,7 +15,7 @@ deploy_to_biznet_gio:
   script:
     - echo "🚀 Mulai SSH deploy ke Biznet Gio..."
     - |
-      ssh $BIZ_USER@$BIZ_HOST <<'EOF'
+      ssh $BIZ_USER@$BIZ_HOST <<EOF
       set -e
       echo "✅ Masuk ke server"
       echo "Change directory ke path: $BIZ_HOST@$BIZ_USER ,  $BIZ_PATH"
