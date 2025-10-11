@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/global/header";
 import Footer from "@/components/global/footer";
-import {NextIntlClientProvider} from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale } from "next-intl/server";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   description: "POS and Inventory Management System",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -29,13 +30,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${interMono.variable} antialiased`}
+        className={`${inter.variable} ${interMono.variable} antialiased overflow-x-hidden`}
       >
-        <Header />
-        <main className="min-h-[calc(100vh-8rem)]">
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        </main>
-        <Footer />
+        <NextIntlClientProvider>
+          <Header transparent />
+          <main className="min-h-[calc(100vh-8rem)]">
+            {children}
+          </main>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -12,53 +11,54 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DialogDescription, DialogTitle } from "../ui/dialog";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { logoMekoPointLight } from "@/assets";
+import { Locale, useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
+import { startTransition } from "react";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 
-export function Header() {
+interface HeaderProps {
+  transparent?: boolean;
+}
+
+export function Header({ transparent }: HeaderProps) {
+  const t = useTranslations('Header');
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams()
+  const locale = useLocale()
+
+  function onSelectChange(nextLocale: Locale) {
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error -- TypeScript will validate that only known `params`
+        // are used in combination with a given `pathname`. Since the two will
+        // always match for the current route, we can skip runtime checks.
+        {pathname, params},
+        {locale: nextLocale}
+      );
+      router.refresh();
+    });
+  }
+
   return (
-    <header className="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+    <header className={cn("", {
+      "fixed top-0 left-0 right-0 z-50 text-white": transparent,
+    })}>
+      <div className="container mx-auto flex items-center justify-between py-3">
         <div className="flex items-center gap-4">
-          <Link href="/" className="font-semibold">
-            meko
+          <Link href={`/${locale}`} className="font-semibold">
+            <Image
+              src={logoMekoPointLight}
+              width={260}
+              height={57}
+              alt="meko point"
+              className="object-cover" />
           </Link>
-
-          {/* Desktop navigation */}
-          <div className="hidden md:block">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="p-4">
-                      <ul className="grid gap-2">
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link href="/features" className="block rounded-md px-3 py-2 hover:bg-accent">
-                              Features
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link href="/pricing" className="block rounded-md px-3 py-2 hover:bg-accent">
-                              Pricing
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      </ul>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link href="/docs" className="px-3 py-2 hover:underline">
-                      Docs
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
         </div>
 
         <div className="flex items-center gap-2">
@@ -69,9 +69,9 @@ export function Header() {
                 <Button variant="ghost" size="icon" aria-label="Open menu">
                   {/* Hamburger icon */}
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M4 12H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M4 6H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M4 12H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 </Button>
               </SheetTrigger>
@@ -108,14 +108,54 @@ export function Header() {
             </Sheet>
           </div>
 
-          {/* Desktop actions */}
-          <div className="hidden md:flex items-center gap-2">
-            <Button asChild variant="ghost">
-              <Link href="/login">Log in</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/signup">Sign up</Link>
-            </Button>
+          {/* Desktop navigation */}
+          <div className="hidden md:block">
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="/" className="px-3 py-2 hover:underline text-base">
+                      {t('menu.menuLabel1')}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="#service" className="px-3 py-2 hover:underline text-base">
+                      {t('menu.menuLabel2')}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="#feature" className="px-3 py-2 hover:underline text-base">
+                      {t('menu.menuLabel3')}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="#contact" className="px-3 py-2 hover:underline text-base">
+                      {t('menu.menuLabel4')}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="p-2">ID</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul>
+                      {routing.locales.map((locale) => (
+                        <li key={locale}>
+                          <Button variant="ghost" onClick={() => onSelectChange(locale)}>
+                            {locale}
+                          </Button>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
         </div>
       </div>
