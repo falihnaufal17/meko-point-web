@@ -17,7 +17,7 @@ import { logoMekoPointLight } from "@/assets";
 import { Locale, useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { startTransition } from "react";
+import { startTransition, useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 
@@ -31,6 +31,23 @@ export function Header({ transparent }: HeaderProps) {
   const pathname = usePathname();
   const params = useParams()
   const locale = useLocale()
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY
+      if (offset > 50) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   function onSelectChange(nextLocale: Locale) {
     startTransition(() => {
@@ -46,8 +63,9 @@ export function Header({ transparent }: HeaderProps) {
   }
 
   return (
-    <header className={cn("", {
-      "fixed top-0 left-0 right-0 z-50 text-white": transparent,
+    <header className={cn("fixed top-0 left-0 right-0 z-50 text-white transition-colors duration-300", {
+      "bg-[#0D4B94]": transparent && scrolled,
+      "bg-transparent": transparent && !scrolled,
     })}>
       <div className="container mx-auto flex items-center justify-between py-3">
         <div className="flex items-center gap-4">

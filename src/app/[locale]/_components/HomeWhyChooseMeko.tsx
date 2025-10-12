@@ -3,12 +3,48 @@
 import FadeIn from "@/components/global/fadeIn"
 import { Card, CardContent } from "@/components/ui/card"
 import { Box, ChartNoAxesCombined, Clock, Cloud, QrCode, Smartphone } from "lucide-react"
+import { useTranslations } from "next-intl";
 
 export default function HomeWhyChooseMeko() {
+  const t = useTranslations('homeWhyChooseMeko');
+
+  const data = [
+    {
+      title: t('reason1Title'),
+      icon: QrCode,
+      shortDescription: t('reason1Description')
+    },
+    {
+      title: t('reason2Title'),
+      icon: Box,
+      shortDescription: t('reason2Description')
+    },
+    {
+      title: t('reason3Title'),
+      icon: Cloud,
+      shortDescription: t('reason3Description')
+    },
+    {
+      title: t('reason4Title'),
+      icon: Clock,
+      shortDescription: t('reason4Description')
+    },
+    {
+      title: t('reason5Title'),
+      icon: Smartphone,
+      shortDescription: t('reason5Description')
+    },
+    {
+      title: t('reason6Title'),
+      icon: ChartNoAxesCombined,
+      shortDescription: t('reason6Description')
+    }
+  ];
+
   return (
     <section className="container mx-auto lg:py-10">
-      <h2 className="lg:text-3xl font-bold lg:mb-4 text-center">Mengapa Memilih Meko?</h2>
-      <p className="lg:text-2xl lg:mb-4 text-content-2 text-center">Meko Point menggabungkan QR Code Ordering dengan Point-Of-Sale (POS) dan manajemen inventory yang komprehensif.</p>
+      <h2 className="lg:text-3xl font-bold lg:mb-4 text-center">{t('reason1Title')}</h2>
+      <p className="lg:text-2xl lg:mb-4 text-content-2 text-center">{t('reason1Description')}</p>
       <div className="grid lg:grid-cols-3 lg:gap-x-10 lg:gap-y-4">
         {data.map((item, index) => {
           const Icon = item.icon
@@ -31,36 +67,3 @@ export default function HomeWhyChooseMeko() {
     </section>
   )
 }
-
-const data = [
-  {
-    title: "QR Code Ordering",
-    icon: QrCode,
-    shortDescription: "Pelanggan scan QR code meja untuk mengakses menu digital dan memesan langsung dari ponsel mereka."
-  },
-  {
-    title: "Manajemen Inventory",
-    icon: Box,
-    shortDescription: "Pelacakan inventory real-time dengan update stok otomatis saat pesanan dibuat dan dipenuhi."
-  },
-  {
-    title: "POS Berbasis Cloud",
-    icon: Cloud,
-    shortDescription: "Akses sistem POS Anda kapan saja, di mana saja. Tidak perlu instalasi, update otomatis, dan penyimpanan cloud aman."
-  },
-  {
-    title: "Waktu Antrian Nol",
-    icon: Clock,
-    shortDescription: "Hilangkan antrian kasir sepenuhnya. Pesanan langsung ke dapur, mengurangi waktu tunggu hingga 70%."
-  },
-  {
-    title: "Dioptimalkan Mobile",
-    icon: Smartphone,
-    shortDescription: "Pengalaman mobile sempurna untuk pelanggan. Tidak perlu download aplikasi - bekerja langsung di browser web."
-  },
-  {
-    title: "Analitik Real-Time",
-    icon: ChartNoAxesCombined,
-    shortDescription: "Lacak pesanan, level inventory, item populer, jam sibuk, dan pendapatan secara real-time dengan dashboard komprehensif."
-  }
-]

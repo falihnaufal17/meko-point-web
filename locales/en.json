@@ -11,10 +11,89 @@
     "title": "Skip the Queue, Scan & Order",
     "description": "A revolutionary QR-based POS and inventory system. Customers scan the QR code at the table, choose their food, and completely skip the cashier line. A complete point-of-sale solution for Indonesian restaurants.",
     "cta1Label": "Watch Demo",
-    "cta2Label": "Try for Free!",
-    "homeVisionMission": {
-      "vision": "Visi",
-      "mission": "Misi"
-    }
+    "cta2Label": "Try for Free!"
+  },
+  "homeHowItWorks": {
+    "title": "How Meko Point QR Ordering Works",
+    "description": "A simple 3-step process that eliminates queues and enhances customer experience with integrated POS and inventory management",
+    "step1Title": "Scan QR Code",
+    "step1Description": "Customers sit at the table and scan the unique QR code with their smartphone. Instantly opens digital menu without needing to download an app.",
+    "step2Title": "Browse & Order",
+    "step2Description": "Browse the complete menu with photos, descriptions, and prices. Choose food and beverages, customize orders, and easily add special requests.",
+    "step3Title": "Skip the Queue",
+    "step3Description": "Orders go directly to the kitchen through the POS system. Inventory automatically updates. No need to queue at the cashier. Food is delivered straight to the table."
+  },
+  "homeStartMekoPoint": {
+    "title": "Start with Meko Point",
+    "description": "A revolutionary QR Code-based POS and inventory system. Customers scan the QR Code at the table, select their food, and completely skip the cashier queue with a complete point-of-sale (POS) solution for your Business.",
+    "buttonLabel": "Let's Start Joining Us!"
+  },
+  "homeWhyChooseMeko": {
+    "title": "Why Choose Meko?",
+    "description": "Meko Point combines QR Code Ordering with Point-Of-Sale (POS) and comprehensive inventory management.",
+    "reason1Title": "QR Code Ordering",
+    "reason1Description": "Customers scan table QR code to access digital menu and order directly from their phones.",
+    "reason2Title": "Inventory Management",
+    "reason2Description": "Real-time inventory tracking with automatic stock updates when orders are created and fulfilled.",
+    "reason3Title": "Cloud-Based POS",
+    "reason3Description": "Access your POS system anytime, anywhere. No installation needed, automatic updates, and secure cloud storage.",
+    "reason4Title": "Zero Queue Time",
+    "reason4Description": "Completely eliminate cashier queues. Orders go directly to the kitchen, reducing waiting time by up to 70%.",
+    "reason5Title": "Mobile Optimized",
+    "reason5Description": "Perfect mobile experience for customers. No app download needed - works directly in web browser.",
+    "reason6Title": "Real-Time Analytics",
+    "reason6Description": "Track orders, inventory levels, popular items, peak hours, and revenue in real-time with comprehensive dashboard."
+  },
+  "homeVisionMission": {
+    "vision": "Vision",
+    "visionDescription": "Optimizing food reservations with efficient timing, eliminating queues, and transforming how Indonesian restaurants serve their customers through innovative QR technology and comprehensive POS solutions.",
+    "mission": "Mission",
+    "mission1": "Digital Transformation",
+    "mission2": "Affordable Solutions",
+    "mission3": "Revolutionizing Restaurant Operations"
+  },
+  "homeMekoPointFeatures": {
+    "title": "Meko Point Features",
+    "description": "Meko Point combines QR Code Ordering with Point-of-Sale (POS) and comprehensive inventory management.",
+    "feature1Title": "Scan QR",
+    "feature1Description": "Simply scan the QR code at your table to access the digital menu, order food, and make payments without waiting at the cashier.",
+    "feature2Title": "Inventory",
+    "feature2Description": "Monitor raw material stock in real-time, receive notifications when stock is running low, and easily manage inventory to prevent stockouts.",
+    "feature3Title": "Cloud Based",
+    "feature3Description": "Cloud-based system that enables data access anytime, anywhere, ensuring data security and seamless integration with other devices.",
+    "feature4Title": "Real Time",
+    "feature4Description": "Track orders, inventory levels, popular items, peak hours, and revenue in real-time with a comprehensive dashboard."
+  },
+  "homeContact": {
+    "title": "Ready to Transform Your Business?",
+    "description": "Contact us for questions or to join us...",
+    "fullName": "Full Name",
+    "enterFullName": "Enter Full Name",
+    "email": "Email",
+    "enterEmail": "Enter Your Email",
+    "PhoneNumber": "Enter Phone Number",
+    "enterPhoneNumber": "Enter Phone Number",
+    "message": "Message",
+    "enterMessage": "Enter Your Message",
+    "sendMessage": "Send Message"
+  },
+  "Footer": {
+    "Contact": "Contact",
+    "address": "Bandung, West Java, Indonesia",
+    "contactInfo": "Contact Info",
+    "Product": "Product",
+    "qrOrdering": "QR Ordering",
+    "systemPOS": "POS System",
+    "inventoryManagement": "Inventory Management",
+    "features": "Features",
+    "price": "Price",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "mission": "Mission",
+    "career": "Career",
+    "support": "Support",
+    "Terms and Conditions": "Terms and Conditions",
+    "privacy policy": "Privacy Policy",
+    "Copyright": "© Copyright by Meko Point. All Rights Reserved"
   }
 }

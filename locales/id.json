@@ -11,10 +11,89 @@
     "title": "Lewati Antrian, Scan & Pesan",
     "description": "Sistem POS dan inventory revolusioner berbasis QR. Pelanggan scan QR code di meja, pilih makanan, dan lewati antrian kasir sepenuhnya. Solusi point-of-sale lengkap untuk restoran Indonesia.",
     "cta1Label": "Tonton Demo",
-    "cta2Label": "Mau Uji Coba Gratis!",
-    "homeVisionMission": {
-      "vision": "Visi",
-      "mission": "Misi"
-    }
+    "cta2Label": "Mau Uji Coba Gratis!"
+  },
+  "homeHowItWorks": {
+    "title": "Cara Kerja Meko Point QR Ordering",
+    "description": "Proses sederhana 3 langkah yang menghilangkan antrian dan meningkatkan pengalaman pelanggan dengan manajemen POS dan inventory terintegrasi",
+    "step1Title": "Pindai QR Code",
+    "step1Description": "Pelanggan duduk di meja dan scan QR code unik dengan smartphone mereka. Langsung membuka menu digital tanpa perlu download aplikasi.",
+    "step2Title": "Jelajahi & Pesan",
+    "step2Description": "Jelajahi menu lengkap dengan foto, deskripsi, dan harga. Pilih makanan dan minuman, kustomisasi pesanan, dan tambahkan permintaan khusus dengan mudah.",
+    "step3Title": "Lewati Antrian",
+    "step3Description": "Pesanan langsung ke dapur melalui sistem POS. Inventory otomatis terupdate. Tidak perlu antri di kasir. Makanan diantar langsung ke meja."
+  },
+  "homeStartMekoPoint": {
+    "title": "Mulai dengan Meko Point",
+    "description": "Sistem POS dan inventory revolusioner berbasis QR Code. Pelanggan men-scan QR Code di meja, pilih makanan, dan lewati antrian kasir sepenuhnya dengan metode point-of-sale (POS) lengkap untuk Bisnis Anda.",
+    "buttonLabel": "Ayo Mulai Bergabung Dengan Kami!"
+  },
+  "homeWhyChooseMeko": {
+    "title": "Mengapa Memilih Meko?",
+    "description": "Meko Point menggabungkan QR Code Ordering dengan Point-Of-Sale (POS) dan manajemen inventory yang komprehensif.",
+    "reason1Title": "Pemesanan Kode QR",
+    "reason1Description": "Pelanggan scan QR code meja untuk mengakses menu digital dan memesan langsung dari ponsel mereka.",
+    "reason2Title": "Manajemen Inventaris",
+    "reason2Description": "Pelacakan inventaris real-time dengan update stok otomatis saat pesanan dibuat dan dipenuhi.",
+    "reason3Title": "POS Berbasis Cloud",
+    "reason3Description": "Akses sistem POS Anda kapan saja, di mana saja. Tidak perlu instalasi, update otomatis, dan penyimpanan cloud aman.",
+    "reason4Title": "Waktu Antrian Nol",
+    "reason4Description": "Hilangkan antrian kasir sepenuhnya. Pesanan langsung ke dapur, mengurangi waktu tunggu hingga 70%.",
+    "reason5Title": "Dioptimalkan Mobile",
+    "reason5Description": "Pengalaman mobile sempurna untuk pelanggan. Tidak perlu download aplikasi - bekerja langsung di browser web.",
+    "reason6Title": "Analisis Waktu Nyata",
+    "reason6Description": "Lacak pesanan, level inventory, item populer, jam sibuk, dan pendapatan secara real-time dengan dashboard komprehensif."
+  },
+  "homeVisionMission": {
+    "vision": "Visi",
+    "visionDescription": "Mengoptimalkan reservasi makanan dengan waktu yang efisien, menghilangkan antrian dan mentransformasi cara restoran Indonesia melayani pelanggan mereka melalui teknologi QR inovatif dan solusi POS komprehensif.",
+    "mission": "Misi",
+    "mission1": "Transformasi Digital",
+    "mission2": "Solusi Terjangkau",
+    "mission3": "Merevolusi Operasi Restoran"
+  },
+  "homeMekoPointFeatures": {
+    "title": "Fitur Meko Point",
+    "description": "Meko Point menggabungkan QR Code Ordering dengan Point-Of-Sale (POS) dan manajemen inventory yang komprehensif.",
+    "feature1Title": "Pindai QR",
+    "feature1Description": "Pelanggan cukup pindai QR code di meja untuk mengakses menu digital, memesan makanan, dan melakukan pembayaran tanpa perlu menunggu kasir.",
+    "feature2Title": "Inventaris",
+    "feature2Description": "Pantau stok bahan baku secara real-time, dapatkan notifikasi saat stok menipis, dan kelola inventaris dengan mudah untuk menghindari kehabisan barang.",
+    "feature3Title": "Berbasis Cloud",
+    "feature3Description": "Sistem berbasis cloud yang memungkinkan akses data kapan saja dan di mana saja, memastikan keamanan data dan kemudahan integrasi dengan perangkat lain.",
+    "feature4Title": "Waktu Nyata",
+    "feature4Description": "Lacak pesanan, level inventaris, item populer, jam sibuk, dan pendapatan secara real-time dengan dashboard komprehensif."
+  },
+  "HomeContact": {
+    "title": "Siap Mentransformasi Bisnis Anda?",
+    "description": "Hubungi kami untuk pertanyaan atau ingin bergabung dengan kami...",
+    "fullName": "Nama Lengkap",
+    "enterFullName": "Masukkan Nama Lengkap",
+    "email": "Email",
+    "enterEmail": "Masukkan Email Anda",
+    "PhoneNumber": "Masukan Nomor Telepon",
+    "enterPhoneNumber": "Masukan Nomor Telepon",
+    "message": "Pesan",
+    "enterMessage": "Masukkan Pesan Anda",
+    "sendMessage": "Kirim Pesan"
+  },
+  "Footer": {
+    "Contact": "Kontak",
+    "address": "Bandung, West Java, Indonesia",
+    "contactInfo": "Info Kontak",
+    "Product": "Produk",
+    "qrOrdering": "Pemesanan QR",
+    "systemPOS": "Sistem POS",
+    "inventoryManagement": "Manajemen Inventaris",
+    "features": "Fitur",
+    "price": "Harga",
+    "company": "Perusahaan",
+    "aboutUs": "Tentang Kami",
+    "mission": "Misi",
+    "career": "Karir",
+    "support": "Dukungan",
+    "Terms and Conditions": "Syarat dan Ketentuan",
+    "privacy policy": "Kebijakan Privasi",
+    "Copyright": "© Hak Cipta oleh Meko Point. Semua Hak Dilindungi Undang-Undang"
   }
 }
