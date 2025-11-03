@@ -6,16 +6,27 @@ import { StaticImageData } from "next/image";
 import Background from "./background";
 
 interface HeroContentProps {
-  title?: string;
-  description?: string;
+  title?: React.ReactNode;
+  titleLine1?: React.ReactNode;
+  titleLine2?: React.ReactNode;
+  description?: React.ReactNode;
   children?: React.ReactNode;
+  className?: string;
 }
 
-export function HeroContent({ title, description, children }: HeroContentProps) {
+export function HeroContent({ title, titleLine1, titleLine2, description, children }: HeroContentProps) {
   return (
     <div className="container mx-auto relative z-20">
-      <FadeIn className="max-w-[629px]">
-        <h1 className="text-white lg:text-[52px] lg:mb-5 font-bold lg:max-w-md">{title}</h1>
+      <FadeIn className="w-full max-w-[629px] px-4 sm:px-6 md:px-8 lg:px-0">
+        <h1 className="text-white text-[40px] leading-none tracking-[0%] font-bold font-inter lg:text-[52px] lg:mb-5 lg:max-w-md">
+          {titleLine1 && titleLine2 ? (
+            <>
+              {titleLine1}
+              <br className="block lg:hidden" />
+              <span className="block lg:inline">{titleLine2}</span>
+            </>
+          ) : title}
+        </h1>
         <p className="lg:text-2xl text-white lg:mb-10">{description}</p>
         {children}
       </FadeIn>

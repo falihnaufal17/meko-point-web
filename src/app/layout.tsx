@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/global/header";
 import Footer from "@/components/global/footer";
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale } from "next-intl/server";
 
 const inter = Inter({
   variable: "--font-inter",
