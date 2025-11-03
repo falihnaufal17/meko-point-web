@@ -16,7 +16,7 @@ export default function HomeHero() {
           <Button className="w-full sm:flex-1 text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold py-3 sm:py-3 md:py-3.5 h-auto whitespace-nowrap rounded-md" variant="outline">
             {t("cta1Label")}
           </Button>
-          <Button className="w-full sm:flex-1 text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold py-3 sm:py-3 md:py-3.5 h-auto bg-white hover:bg-primary hover:text-primary-foreground text-primary whitespace-nowrap rounded-md" variant="ghost">
+          <Button className="w-full sm:flex-1 text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold py-3 sm:py-3 md:py-3.5 h-auto bg-white hover:bg-secondary hover:text-primary-foreground text-primary whitespace-nowrap rounded-md" variant="ghost">
             {t("cta2Label")}
           </Button>
         </div>
