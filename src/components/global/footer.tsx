@@ -86,13 +86,30 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-8 border-t border-white/20 pt-6">
-          <div className="flex flex-col items-center justify-between gap-4 text-base sm:flex-row">
+        <div className="mt-8">
+          {/* Mobile: Links above border */}
+          <div className="flex flex-col items-center gap-4 text-base sm:hidden">
             <div className="flex gap-6">
               <Link href="/syarat-dan-ketentuan" className="hover:underline">{t("Terms and Conditions")}</Link>
               <Link href="/kebijakan-privasi" className="hover:underline">{t("privacy policy")}</Link>
             </div>
-            <p>{t("Copyright")}</p>
+          </div>
+          
+          {/* Border */}
+          <div className="border-t border-white/20 pt-6 mt-4 sm:mt-0">
+            {/* Desktop: Links and Copyright in one row */}
+            <div className="hidden sm:flex items-center justify-between gap-4 text-base">
+              <div className="flex gap-6">
+                <Link href="/syarat-dan-ketentuan" className="hover:underline">{t("Terms and Conditions")}</Link>
+                <Link href="/kebijakan-privasi" className="hover:underline">{t("privacy policy")}</Link>
+              </div>
+              <p>{t("Copyright")}</p>
+            </div>
+            
+            {/* Mobile: Copyright below border */}
+            <div className="flex justify-center text-base sm:hidden">
+              <p>{t("Copyright")}</p>
+            </div>
           </div>
         </div>
       </div>

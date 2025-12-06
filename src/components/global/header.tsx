@@ -13,7 +13,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DialogDescription, DialogTitle } from "../ui/dialog";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { logoMekoPointLight } from "@/assets";
+import { logoMekoPointLight, logoMekoPointMobile } from "@/assets";
 import { Locale, useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -32,6 +32,11 @@ export function Header({ transparent }: HeaderProps) {
   const params = useParams()
   const locale = useLocale()
   const [scrolled, setScrolled] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,15 +72,35 @@ export function Header({ transparent }: HeaderProps) {
       "bg-[#0D4B94]": transparent && scrolled,
       "bg-transparent": transparent && !scrolled,
     })}>
-      <div className="container mx-auto flex items-center justify-between py-3">
+      <div className="container mx-auto flex items-center justify-between py-2 sm:py-3 px-4 sm:px-0">
         <div className="flex items-center gap-4">
-          <Link href={`/${locale}`} className="font-semibold">
-            <Image
-              src={logoMekoPointLight}
-              width={260}
-              height={57}
-              alt="meko point"
-              className="object-cover" />
+          <Link href={`/${locale}`} className="font-semibold flex-shrink-0">
+            {isMounted ? (
+              <>
+                <Image
+                  src={logoMekoPointMobile}
+                  width={160}
+                  height={160}
+                  alt="meko point"
+                  className="object-cover md:hidden"
+                />
+                <Image
+                  src={logoMekoPointLight}
+                  width={260}
+                  height={57}
+                  alt="meko point"
+                  className="object-cover hidden md:block"
+                />
+              </>
+            ) : (
+              <Image
+                src={logoMekoPointLight}
+                width={260}
+                height={57}
+                alt="meko point"
+                className="object-cover"
+              />
+            )}
           </Link>
         </div>
 
@@ -159,13 +184,47 @@ export function Header({ transparent }: HeaderProps) {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="p-2">ID</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="p-2 border border-white rounded">
+                    <div className="flex items-center gap-2">
+                      {locale === 'id' ? (
+                        <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="20" height="7.5" fill="#E70011"/>
+                          <rect y="7.5" width="20" height="7.5" fill="#FFFFFF"/>
+                        </svg>
+                      ) : (
+                        <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="20" height="15" fill="#012169"/>
+                          <path d="M0 0L20 15M20 0L0 15" stroke="white" strokeWidth="2"/>
+                          <path d="M0 0L20 15M20 0L0 15" stroke="#C8102E" strokeWidth="1.33"/>
+                          <path d="M10 0V15M0 7.5H20" stroke="white" strokeWidth="3.33"/>
+                          <path d="M10 0V15M0 7.5H20" stroke="#C8102E" strokeWidth="2"/>
+                        </svg>
+                      )}
+                      <span>{locale.toUpperCase()}</span>
+                    </div>
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul>
-                      {routing.locales.map((locale) => (
-                        <li key={locale}>
-                          <Button variant="ghost" onClick={() => onSelectChange(locale)}>
-                            {locale}
+                      {routing.locales.map((loc) => (
+                        <li key={loc}>
+                          <Button variant="ghost" onClick={() => onSelectChange(loc)} className="w-full justify-start">
+                            <div className="flex items-center gap-2">
+                              {loc === 'id' ? (
+                                <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <rect width="20" height="7.5" fill="#E70011"/>
+                                  <rect y="7.5" width="20" height="7.5" fill="#FFFFFF"/>
+                                </svg>
+                              ) : (
+                                <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <rect width="20" height="15" fill="#012169"/>
+                                  <path d="M0 0L20 15M20 0L0 15" stroke="white" strokeWidth="2"/>
+                                  <path d="M0 0L20 15M20 0L0 15" stroke="#C8102E" strokeWidth="1.33"/>
+                                  <path d="M10 0V15M0 7.5H20" stroke="white" strokeWidth="3.33"/>
+                                  <path d="M10 0V15M0 7.5H20" stroke="#C8102E" strokeWidth="2"/>
+                                </svg>
+                              )}
+                              <span>{loc.toUpperCase()}</span>
+                            </div>
                           </Button>
                         </li>
                       ))}
@@ -182,5 +241,3 @@ export function Header({ transparent }: HeaderProps) {
 }
 
 export default Header;
-
-

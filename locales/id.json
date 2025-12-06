@@ -7,7 +7,7 @@
       "menuLabel4": "Kontak"
     }
   },
-  "HomePage": {
+  "homePage": {
     "title": "Lewati Antrian, Scan & Pesan",
     "description": "Sistem POS dan inventory revolusioner berbasis QR. Pelanggan scan QR code di meja, pilih makanan, dan lewati antrian kasir sepenuhnya. Solusi point-of-sale lengkap untuk restoran Indonesia.",
     "cta1Label": "Tonton Demo",
@@ -64,7 +64,7 @@
     "feature4Title": "Waktu Nyata",
     "feature4Description": "Lacak pesanan, level inventaris, item populer, jam sibuk, dan pendapatan secara real-time dengan dashboard komprehensif."
   },
-  "HomeContact": {
+  "homeContact": {
     "title": "Siap Mentransformasi Bisnis Anda?",
     "description": "Hubungi kami untuk pertanyaan atau ingin bergabung dengan kami...",
     "fullName": "Nama Lengkap",
